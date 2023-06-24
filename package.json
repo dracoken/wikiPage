@@ -1,0 +1,24 @@
+{
+  "name": "wikipage",
+  "version": "1.0.0",
+  "description": "just a basic wiki page to better hone my html and css skills",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dracoken/wikiPage.git"
+  },
+  "author": "Dyllin Wood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dracoken/wikiPage/issues"
+  },
+  "homepage": "https://github.com/dracoken/wikiPage#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
