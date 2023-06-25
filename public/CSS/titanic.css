@@ -1,0 +1,10 @@
+body
+{
+    overflow: auto; /*over flow works correctly*/
+    background-color: aqua;
+}
+
+hr:nth-child(2)
+{
+    color: black;
+}

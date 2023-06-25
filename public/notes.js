@@ -70,3 +70,12 @@ function changePage()
      *      In this specific case both works
      */
 }
+
+function changePageBack()
+{
+      const form = document.createElement("form");
+      form.setAttribute("action","/");
+      form.setAttribute("method","get");
+      document.body.appendChild(form);
+      form.requestSubmit();
+}
