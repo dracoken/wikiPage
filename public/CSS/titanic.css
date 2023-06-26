@@ -1,10 +1,91 @@
 body
 {
-    overflow: auto; /*over flow works correctly*/
-    background-color: aqua;
+    overflow: auto; /*adds the scroll bar onto the website both vertically and horizontally automatically, if overflow is detected*/
 }
 
-hr:nth-child(2)
+/*------------------------------------------------Header stylings--------------------------------------*/
+.header
 {
-    color: black;
+    width: 100%;
+    height: 80px;
+    background-color: brown;
+    /*overflow: hidden;*/
 }
+
+.menuBar:hover
+{
+    background-color: lightgray;
+}
+
+.menuBar
+{
+    display: inline-block;
+    /*background-color: antiquewhite;*/
+
+    width: 20px;
+    height: 32px;
+    
+    margin-left: 10px;
+    margin-bottom: 15px;
+    padding: 5px; /*using pading for the background color, so that it can change when hovered over*/
+    border-radius: 3px;
+    /*margin-inline-start: 20px; acts as the margin for the first item inside the block*/
+    /*margin-inline-end: 20px; acts as the margin for the last item inside the block*/ 
+    /*margin-inline: 10px;*/ /*is margin-inline-start and end combined together*/
+    overflow: auto;
+}
+
+.wikiLogo
+{
+    display: inline-block;
+    width: 250px;
+    height: 80px;
+    object-fit: cover;
+    object-position: 50% 50%; /*positions the image to a specified location in the image, displaying a portion of the image at the specified location(area) */
+    overflow: hidden;
+}
+
+
+/* this div was originally outside the parent div.
+ * This was happening bc the other sibling elements were overflowing into the next one without being cliped.
+ * The way to solve this problem is to have the overflow clip out the rest of the excess in the siblings before it. 
+ * or to make sure that the previous siblings dont have any overflow in the first place 
+ */
+.searchBar 
+{
+    display: inline-block;
+    width:40%;
+    height:50%;
+    border-inline: 2px solid black;
+    writing-mode: horizontal-tb;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.searchBar img
+{
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    padding-left: 5px;
+}
+
+#searchInfo
+{
+    width: 80%;
+    height: 30px;
+    text-align: left;
+    line-height: 30px;
+    overflow: hidden;
+
+}
+
+#searchSubmit
+{
+    width:10%;
+    height: 40px;
+    padding-top: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+/*----------------------------------End Of Header Stylings-------------------------------------------*/

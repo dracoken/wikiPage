@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="notes.js"> </script>
-    <link rel="stylesheet"  href="/CSS/titanic.css"></style>
-</head>
-<body>
-    <h3> Rendered properly</h3>
-    <div>   <button onclick="changePage()"> move to different page</button>  </div>
-    <div>   <img src="/images/overflowTest.jpg">    </div>
-    <hr>
-    <div>   <img src="/images/titanicTestImage.jpg"> </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="notes.js"> </script>
+        <link rel="stylesheet"  href="/CSS/titanic.css"></link>
+    </head>
+    <body>
+        <div class="header">
+            <img src="/images/menuBar.jpg" class="menuBar">
+            <img src="/images/wiki-header-logo.png" class="wikiLogo">
+            <form class="searchBar">
+                <img src="/images/searchBarIcon.jpg">
+                <textarea id="searchInfo" name="searchRequest" placeholder="Search Wikipedia"></textarea>
+                <button type="submit" id="searchSubmit"><b>Search</b></submit>
+            </form>
+            
+            
+        </div>
 
-</body>
+
+
+
+        <!-- <div>   <button onclick="changePage()"> move to different page to show that we can render multiple templates </button>  </div> -->
+        <!-- 
+            <div>   <img src="/images/overflowTest.jpg">    </div>
+            <hr>
+            <div>   <img src="/images/titanicTestImage.jpg"> </div>
+        -->
+        
+
+    </body>
 </html>
