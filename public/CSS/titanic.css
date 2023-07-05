@@ -163,15 +163,18 @@ body
     }
     .info label
     {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .sideBar
     {
+        display: inline-flexbox;
         background-color: blueviolet;
         float:right;
+        position: static;
         padding:1%;
         width: 25%;
+        overflow: hidden;
     }
     /*-------------------------------End of Info Styling---------------------------------------------*/
 
