@@ -79,17 +79,18 @@ function changePageBack()
       document.body.appendChild(form);
       form.requestSubmit();
 }
+
+
 let lastSection = ""; //starts off at the top, we need to check wether it exists already or not;
-//let lastSection = `stylesheet-Top`; //starts off at the top, we need to check wether it exists already or not;
-let bufferSection = "";
-var observer = new IntersectionObserver((entries) => { //got this to work
+let bufferSection = ""; //buffer value that holds the lastSection node
+var observer = new IntersectionObserver((entries) => { //needs a check that determines if a section if already have been revealed on load
       // isIntersecting is true when element and viewport are overlapping
 	// isIntersecting is false when element and viewport don't overlap
 	if(entries[0].isIntersecting === true)
       {
             console.log(entries[0].target.getAttribute("id"));
 
-            let currentSection = entries[0].target.getAttribute("id");  //current section that we have just revealed
+            let currentSection = entries[0].target.getAttribute("id");  //current section that was just revealed on scroll
 
             var styleSheet = document.createElement("link");
             styleSheet.rel = "stylesheet";
@@ -97,21 +98,25 @@ var observer = new IntersectionObserver((entries) => { //got this to work
             styleSheet.id = `stylesheet-${currentSection}`;
 
             bufferSection = lastSection; //buffer value that holds the last section's id value, till we reset it
-            lastSection = styleSheet.id;  //lastSection = currentSection
-            console.log("last section = " + lastSection);
+            lastSection = styleSheet.id;  //lastSection = currentSection. works bc on the next observer update, currentSection changes making lastSection the last viewed section.
 
-            if(document.getElementsByTagName("link").length > 1) //in this case that we have already added a stylesheet onto here
+
+            
+            //case where additional stylesheet(s) have been added into the DOM at runtime.
+            //(aka the CSS file(s) that handel the "table of content's" styling for each of its sections)
+            if(document.getElementsByTagName("link").length > 1)//might have to be 2, was orignally 1
             {
                   document.body.appendChild(styleSheet);
                   document.body.removeChild(document.querySelector(`#${bufferSection}`));
             }
-            else
+            else //case where no additional stylesheet(s) have been added into the DOM at runtime
             {
                   document.body.appendChild(styleSheet);
             }
       }
 }, {threshold: [0]});
 
-observer.observe(document.getElementById("Background"));
+//Assigning html elements to the aysnc observer chain. adds/removes stylesheets according to the section that is currently being viewed.
 observer.observe(document.getElementById("Top"));
-//observer.observe(document.querySelector("#Background"));
+observer.observe(document.querySelector("#Background"));
+//observer.observe(document.getElementById("Background")); //can use either the jquery or the document based elementID/class/tagname search
