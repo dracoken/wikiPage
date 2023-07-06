@@ -79,3 +79,39 @@ function changePageBack()
       document.body.appendChild(form);
       form.requestSubmit();
 }
+let lastSection = ""; //starts off at the top, we need to check wether it exists already or not;
+//let lastSection = `stylesheet-Top`; //starts off at the top, we need to check wether it exists already or not;
+let bufferSection = "";
+var observer = new IntersectionObserver((entries) => { //got this to work
+      // isIntersecting is true when element and viewport are overlapping
+	// isIntersecting is false when element and viewport don't overlap
+	if(entries[0].isIntersecting === true)
+      {
+            console.log(entries[0].target.getAttribute("id"));
+
+            let currentSection = entries[0].target.getAttribute("id");  //current section that we have just revealed
+
+            var styleSheet = document.createElement("link");
+            styleSheet.rel = "stylesheet";
+            styleSheet.href = `/CSS/observe-files/${currentSection}.css`;
+            styleSheet.id = `stylesheet-${currentSection}`;
+
+            bufferSection = lastSection; //buffer value that holds the last section's id value, till we reset it
+            lastSection = styleSheet.id;  //lastSection = currentSection
+            console.log("last section = " + lastSection);
+
+            if(document.getElementsByTagName("link").length > 1) //in this case that we have already added a stylesheet onto here
+            {
+                  document.body.appendChild(styleSheet);
+                  document.body.removeChild(document.querySelector(`#${bufferSection}`));
+            }
+            else
+            {
+                  document.body.appendChild(styleSheet);
+            }
+      }
+}, {threshold: [0]});
+
+observer.observe(document.getElementById("Background"));
+observer.observe(document.getElementById("Top"));
+//observer.observe(document.querySelector("#Background"));

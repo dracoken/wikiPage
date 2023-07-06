@@ -128,6 +128,8 @@ body
     }
     .tableOfContent label
     {
+        color:blueviolet;
+        /*color: 0000FF;*/
         display: block;
         margin-left: 20%;
     }
@@ -136,11 +138,17 @@ body
         color:red; 
         text-decoration: underline;
     }
+/*     
+    .tableOfContent label:first-child
+    {
+        color: black;
+    }
     .tableOfContent label:first-child:hover
     {
         color:black;
         text-decoration: underline;
     }
+    */
 
     /*-------------------------------------End Of Table of Content Stylings----------------------------*/
 
@@ -163,7 +171,16 @@ body
     }
     .info label
     {
-        font-size: 16px;
+        font-size: 20px;
+    }
+
+    .info .hyperLinks
+    {
+        text-decoration: none;
+    }
+    .info .hyperLinks:hover
+    {
+        text-decoration: underline;
     }
 
     .sideBar
