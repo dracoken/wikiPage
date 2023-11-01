@@ -2,6 +2,7 @@
     {
         color:black;
         text-decoration: none;
+        font-weight: bold;
     }
 
 .tableOfContent label:nth-child(2):hover
@@ -11,5 +12,5 @@
     }
 .tableOfContent label:nth-child(1)
 {
-    color:blueviolet;
+    color:0000FF;
 }

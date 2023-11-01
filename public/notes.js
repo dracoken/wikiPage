@@ -88,8 +88,6 @@ var observer = new IntersectionObserver((entries) => { //needs a check that dete
 	// isIntersecting is false when element and viewport don't overlap
 	if(entries[0].isIntersecting === true)
       {
-            console.log(entries[0].target.getAttribute("id"));
-
             let currentSection = entries[0].target.getAttribute("id");  //current section that was just revealed on scroll
 
             var styleSheet = document.createElement("link");

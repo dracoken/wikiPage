@@ -128,7 +128,7 @@ body
     }
     .tableOfContent label
     {
-        color:blueviolet;
+        color:#0000FF;
         /*color: 0000FF;*/
         display: block;
         margin-left: 20%;
@@ -171,6 +171,38 @@ body
     {
         text-decoration: underline;
     }
+
+    .bground-media
+    {
+        float: left;
+        padding-right: 1%;
+        padding-top: 1%;
+    }
+
+
+    /* -----------Styling(s) for Dimension and Layout Graphic  ---------------*/
+    #dimensions-graphic 
+    {
+        display: inline-flexbox;
+        float:right;
+
+        border: 5px;
+        border-style: solid;
+        border-width: thin;
+        border-color: green;
+        padding: 0.5%;
+    }
+    #dimensions-graphic img
+    {
+        outline: black solid 1px;
+    }
+
+    #dimensions-graphic label
+    {
+        display: block;
+    }
+    /* -------End of Styling(s) for Dimension and Layout Graphic --------*/
+
 
     .sideBar
     {
